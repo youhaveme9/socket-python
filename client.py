@@ -4,7 +4,7 @@ HEADER = 64
 FORMAT = "utf-8"
 PORT = 5050
 DISCONNECT_MSG = "!DISCONNECT"
-SERVER = socket.gethostbyname(socket.gethostname())
+SERVER = "127.0.1.1"
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect((SERVER, PORT))

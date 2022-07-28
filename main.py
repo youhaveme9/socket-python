@@ -9,7 +9,7 @@ SERVER = socket.gethostbyname(socket.gethostname())
 print(SERVER)
 print(socket.gethostname())
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind((SERVER, PORT))
+server.bind(('', PORT))
 
 
 def handle_client(conn, addr):
@@ -23,7 +23,7 @@ def handle_client(conn, addr):
             if msg == DISCONNECT_MSG:
                 connected = False
             print(f"[{addr}] {msg}")
-            # conn.send(msg.encode(FORMAT))
+            conn.send(msg.encode(FORMAT))
     conn.close()
 
 
